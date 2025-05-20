@@ -1,0 +1,147 @@
+{
+	"layer": "top",
+	"margin-bottom": 0,
+
+  	"modules-left": [
+		"custom/launcher",
+		"custom/separator",
+		"cpu",
+		"memory",
+		"disk",
+		"custom/separator",
+		"hyprland/workspaces"
+	],
+
+  	"modules-center": ["hyprland/window"],
+	
+  	"modules-right": [
+		"network",
+		"pulseaudio",
+		"battery",
+		"clock",
+		"custom/separator",
+		"custom/powermenu"
+	],
+
+	"clock": {
+		"tooltip": true,
+		"interval": 60,
+		"format": "{:%H:%M %p}",
+		"tooltip-format": "{:%d-%m-%Y}",
+		"timezone": "America/Argentina/Buenos_Aires"
+	},
+	
+	"custom/launcher": {
+		"tooltip": false,
+		"format": "󰣇",
+		"on-click": "~/.config/rofi/launchers/type-4/./launcher.sh",
+        "on-click-right": "killall rofi"
+	},
+
+	"custom/separator": {
+    	"exec": "echo \"|\"",
+    	"format": "{}"
+  	},
+
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"disable-scroll": true,
+		"on-click": "activate",
+		"all-outputs": false,
+		"activate-only": false,
+		"format-icons": {
+			"1": "1",
+			"2": "2",
+			"3": "3",
+			"4": "4",
+			"5": "5",
+			"6": "6",
+			"7": "7",
+			"8": "8",
+			"9": "9",
+			"10": "10"
+		}
+
+	},
+
+	"hyprland/window": {
+		"max-length": 25,
+		"format": "{}"		
+	},
+
+	"cpu": {
+		"interval": 15,
+		"format": "<span></span> {}%",
+		"max-length": 10
+	},
+
+	"memory": {
+		"interval": 30,
+		"format": "<span></span> {used}GiB%",
+		"max-length": 10
+	},
+
+	"disk": {
+		"interval": 1,
+		"format": "<span></span> {used}"
+	},
+
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 5,
+		"format": "{icon} {volume}%",
+		"format-muted": "{icon} {volume}%",
+		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": {
+			"default": [
+                "<span></span>", 
+                "<span></span>", 
+                "<span></span>"
+            ]
+		}
+	},
+
+	"network": {
+		"tooltip": false,
+		"format-wifi": "<span> </span> {bandwidthDownBits}" ,
+		"interval": 10
+	},
+
+	"battery": {
+        	"states": {
+            		"good": 50,
+            		"warning": 10,
+            		"critical": 0
+        	},
+        	"format": "{icon} <span color='#aab0d0'>{capacity}%</span>",
+		"format-icons": [
+			"<span color='#f43f5e'></span>",  
+			"<span color='#facc15'></span>",  
+			"<span color='#facc15'></span>",  
+			"<span color='#34d399'></span>",  
+			"<span color='#34d399'></span>" 
+		]
+
+    	},
+
+	"temperature": {
+    		"format": "{icon} {temperatureC}°C ",
+    		"hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+    		"critical-threshold": 80,
+			"interval": 30,
+    		"format-icons": [
+      			"",
+      			"",
+      			""
+   	 	]
+  	},
+
+	"custom/powermenu": {
+    	"format": "⏻",
+    	"tooltip": false,
+    	"on-click": "exec wlogout -p layer-shell"
+  	}
+
+	
+
+}

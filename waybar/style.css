@@ -1,0 +1,86 @@
+* {
+  font-family: "Jetbrains Mono NerdFont";
+  font-size: 14px;
+
+}
+
+#waybar {
+  background: #171717;
+  color: #fff;
+}
+
+#clock {
+  color: #fff;
+  margin-right: 10px;
+}
+
+#custom-launcher {
+  color: #8a92ed;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+#workspaces button {
+  color: #737373;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 0px;
+}
+
+#workspaces button.active {
+  color: #ffea32;
+}
+
+#window {
+  color: #fff;
+}
+
+#network {
+  color: #00BFFF;
+  margin-right:20px;
+}
+
+#cpu {
+  color: #FF0059;
+  margin-right: 20px;
+  margin-left: 10px
+}
+
+#memory {
+  color: #fd0ba0;
+  margin-right: 20px;
+}
+
+#disk {
+  color: #FFB800;
+  margin-right: 10px;
+}
+
+#battery {
+  margin-right: 20px;
+}
+
+#pulseaudio {
+  margin-right: 20px;
+  color: #ee70b3;
+}
+
+#temperature {
+  color: #FFB800;
+  margin-right: 4px;
+}
+
+
+#backlight {
+  color:#ead308;
+  margin-right: 20px;
+}
+
+#custom-powermenu {
+  color: rgb(248, 66, 66);
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
