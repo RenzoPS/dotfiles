@@ -14,13 +14,21 @@ $python\
 $lua\
 $php\
 $c\
+$cpp\
 $golang\
 $rust\
 $ruby\
 $package\
-$cmd_duration $jobs\
+$cmd_duration\
+$jobs\
 $line_break\
 $character"""
+
+[username]
+style_user = "bold italic fg:#8e44ad"
+format = "[⭘ $user]($style) "
+disabled = false
+show_always = true
 
 [status]
 # '[\[$symbol$common_meaning$signal_name$maybe_int\]]($style) '
@@ -33,7 +41,7 @@ sigint_symbol = '[✶\($status\)](bright-red) '
 signal_symbol = '[✕\($status\)](bright-red) '
 recognize_signal_code = true
 map_symbol = true
-disabled = false
+disabled = true
 
 [nodejs]
 symbol = "󰎙 "
@@ -64,6 +72,10 @@ symbol = " "
 format = "[$symbol($version )]($style)"
 style = "bold blue"
 
+[cpp]
+symbol = " "
+format = "[$symbol($version )($style)]"
+
 [golang]
 symbol = " "
 format = "[$symbol($version )]($style)"
@@ -83,10 +95,11 @@ style = "bold red"
 symbol = " "
 
 [directory]
-style = "bold blue"
+style = "bold fg:#c471ed"
 read_only = " "
-truncation_length = 4
+truncation_length = 3
 truncation_symbol = "…/"
+truncate_to_repo = false
 
 [directory.substitutions]
 "Documents" = "󰈙 "
@@ -96,24 +109,20 @@ truncation_symbol = "…/"
 "Developer" = "󰲋 "
 
 [character]
-success_symbol = "[❯](bold purple)[❯](bold purple)[❯](bold purple)"
+success_symbol = "[❯](fg: #6ef2b6)[❯](fg: #6ef2b6)[❯](fg: #6ef2b6)"
 error_symbol = "[❯](bold red)[❯](bold red)[❯](bold red)"
 vicmd_symbol = "[❮](bold green)[❮](bold green)[❮](bold green)"
 
 [git_branch]
 symbol = " "
-format = "[$symbol$branch]($style) "
 style = "bright-black"
 
 [package]
 symbol = "󰏗 "
-format = "[$symbol]($style)"
 
 [jobs]
 symbol = " "
-style = "grey"
 number_threshold = 1
-format = "[$symbol]($style)"
 
 [git_status]
 format = '[$all_status$ahead_behind]($style) '
@@ -123,7 +132,7 @@ up_to_date = ' '
 untracked = ' '
 ahead = '⇡${count}'
 behind = '⇣${count}'
-stashed = ' '
+stashed = ' '
 modified = '襁'
 staged = '[++\($count\)](green)'
 renamed = ' '
@@ -137,8 +146,10 @@ style = "bright-black"
 disabled = false
 
 [cmd_duration]
-format = "[$duration]($style)"
+min_time = 1000
+format = " [$duration]($style)"
 style = "bold yellow"
+show_milliseconds = false
 
 # [os]
 # disabled = false
