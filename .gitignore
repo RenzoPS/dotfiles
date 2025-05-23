@@ -1,3 +1,4 @@
+__pycache__
 MongoDB*
 Code
 dconf
@@ -7,7 +8,6 @@ htop
 nvim.bak
 rofi.renzo
 pulse
-ranger
 systemd
 yay
 neofetch
